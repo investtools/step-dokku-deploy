@@ -1,5 +1,5 @@
 name: dokku-deploy
-version: 1.0.2
+version: 1.0.3
 summary: dokku-deploy step
 tags:
   - dokku
