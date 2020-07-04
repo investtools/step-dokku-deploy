@@ -1,0 +1,25 @@
+box: debian:stable-slim
+build:
+    steps:
+        - shellcheck:
+            files: run.sh
+
+        - install-packages:
+            packages: curl git
+
+        - script:
+            name: build shellcheck
+            code: |
+                git clone https://github.com/dokku/dokku.git ~/.dokku
+                cd ~/.dokku
+
+        - script:
+            name: prepare output
+            code: |
+                mkdir -p $WERCKER_ROOT/vendor/dokku
+                mv ~/.dokku/contrib/dokku_client.sh $WERCKER_ROOT/vendor/dokku
+
+publish:
+  steps:
+    - internal/publish-step:
+        owner: PolygonStudio
