@@ -48,14 +48,14 @@ available in `$PATH` before running this step:
 
 ``` yaml
 deploy:
-    steps:
-        - add-to-known_hosts:
-            hostname: my.dokku.io
+  steps:
+    - add-to-known_hosts:
+      hostname: my.dokku.io
 
-        - polygonstudio/dokku-deploy:
-            host: my.dokku.io
-            app-name: application-name
-            key-name: MY_DEPLOY_KEY
+    - investtools/dokku-deploy:
+      host: my.dokku.io
+      app-name: application-name
+      key-name: MY_DEPLOY_KEY
 ```
 
 # Using wercker SSH key pair
@@ -78,14 +78,14 @@ manually add the public key to Heroku.
 
 ```yaml
 deploy:
-    steps:
-        - add-to-known_hosts:
-            hostname: my.dokku.io
+  steps:
+    - add-to-known_hosts:
+      hostname: my.dokku.io
         
-        - polygonstudio/dokku-deploy:
-            host: my.dokku.io 
-            app-name: application-name
-            key-name: MY_DEPLOY_KEY
+    - investtools/dokku-deploy:
+      host: my.dokku.io 
+      app-name: application-name
+      key-name: MY_DEPLOY_KEY
 ```
 
 In the above example the `MY_DEPLOY_KEY` should match the environment variable
